@@ -1,7 +1,11 @@
 git init
-git add <nome>
+git add <nome>    git rm 
 git commit -a -m ""
 git push
 
 git status
 git pull
+
+git branch    git -d
+git checkout
+git merge

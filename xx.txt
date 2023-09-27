@@ -1,0 +1,7 @@
+git init
+git add <nome>
+git commit -a -m ""
+git push
+
+git status
+git pull

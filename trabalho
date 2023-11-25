@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+typedef struct {
+    char nome[50];
+    float preco;
+} ItemCardapio;
+
+void exibirCardapio(ItemCardapio cardapio[], int tamanho) {
+    printf("Cardapio:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d. %s - R$ %.2f\n", i + 1, cardapio[i].nome, cardapio[i].preco);
+    }
+}
+
+void realizarPedido(ItemCardapio cardapio[], int tamanho) {
+    int opcao;
+    printf("Digite o numero do item desejado: ");
+    scanf("%d", &opcao);
+    
+
+    if (opcao >= 1 && opcao <= tamanho) {
+        printf("Você escolheu: %s\n", cardapio[opcao - 1].nome);
+        printf("Preço: R$ %.2f\n", cardapio[opcao - 1].preco);
+        printf("Aproveite sua bebida!\n");
+    } else {
+        printf("Opção inválida.\n");
+    }
+}
+
+int main() {
+    // Definindo um cardápio fictício de bebidas
+    ItemCardapio cardapio[] = {
+        {"Café", 3.5},
+        {"Chá", 2.0},
+        {"Suco de Laranja", 5.0},
+        {"Refrigerante", 4.0}
+    };
+    int tamanhoCardapio = sizeof(cardapio) / sizeof(cardapio[0]);
+
+    // Exibindo o cardápio
+    exibirCardapio(cardapio, tamanhoCardapio);
+
+    // Realizando um pedido
+    realizarPedido(cardapio, tamanhoCardapio);
+
+    return 0;
+}
